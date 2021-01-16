@@ -36,20 +36,89 @@ void Forme::setAncrage(Coordonnee c)
    ancrage = c;
 }
 
-double Rectangle::aire()
+///Rectangle
+Rectangle::Rectangle()
 {
-	double Aire=hauteur*largeur;
-	return Aire;
+	ancrage.x = 0;
+	ancrage.y = 0;
+	d.x = 1;
+	d.y =1;
 }
 
-double Carre::aire()
+Rectangle::Rectangle(Coordonnee c, Dimension recd)
 {
-	double Aire=longueurCote*longueurCote;
-	return Aire;
+	ancrage = c;
+	d = recd;
 }
 
-double Cercle::aire()
+Rectangle::~Rectangle()
 {
-	double Aire=PI*rayon*rayon;
-	return Aire;
 }
+
+Dimension Rectangle::GetSize()
+{
+return d;
+}
+
+void Rectangle::SetSize(Dimension recd)
+{
+	d = recd;
+}
+
+///Carre
+
+Carre::Carre()
+{
+	ancrage.x = 0;
+	ancrage.y = 0;
+	cote = 1;
+}
+
+Carre::Carre(Coordonnee c, int x)
+{
+	ancrage = c;
+	cote = x;
+}
+
+Carre::~Carre()
+{
+}
+
+int Carre::GetSize()
+{
+return cote;
+}
+
+void Carre::SetSize(int x)
+{
+	cote = x;
+}
+
+///Cercle
+
+Cercle::Cercle()
+{
+	ancrage.x = 0;
+	ancrage.y = 0;
+	rayon = 1;
+}
+
+Cercle::Cercle(Coordonnee c, int x)
+{
+	ancrage = c;
+	rayon = x;
+}
+
+Cercle::~Cercle()
+{
+}
+
+int Cercle::GetSize()
+{
+return rayon;
+}
+
+void Cercle::SetSize(int x)
+{
+	rayon = x;
+};
