@@ -65,6 +65,12 @@ void Rectangle::SetSize(Dimension recd)
 	d = recd;
 }
 
+Rectangle::aire()
+{
+	double Aire=d.x*d.y;
+	return Aire;
+}
+
 ///Carre
 
 Carre::Carre()
@@ -92,6 +98,12 @@ return cote;
 void Carre::SetSize(int x)
 {
 	cote = x;
+}
+
+double Carre::aire()
+{
+	double Aire=cote*cote;
+	return Aire;
 }
 
 ///Cercle
@@ -122,3 +134,9 @@ void Cercle::SetSize(int x)
 {
 	rayon = x;
 };
+
+double Cercle::aire()
+{
+	double Aire=PI*rayon*rayon;
+	return Aire;
+}
