@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include "coordonnee.h"
+#include "dimension.h"
 
 using namespace std;
 
@@ -27,46 +28,48 @@ public:
   virtual void afficher(ostream & s) = 0;
 protected:
 	Coordonnee ancrage;
+}
+
+class Rectangle : public Forme
+{
+public:
+	Rectangle();
+	Rectangle(Coordonnee c, Dimension recd);
+	~Rectangle();
+	Dimension GetSize();
+	void SetSize(Dimension recd);
+
+	
+private:
+	Dimension d;
+}
+
+
+class Carre : public Forme
+{
+public:
+	Carre();
+	Carre(Coordonnee c, int x);
+	~Carre();
+	int GetSize();
+	void SetSize(int x);
+
+	
+private:
+	int cote;
+}
+
+class Cercle : public Forme
+{
+public:
+	Cercle();
+	Cercle(Coordonnee c, int x);
+	~Cercle();
+	int GetSize();
+	void SetSize(int x);
+
+	
+private:
+	int rayon;
 };
-
-class Rectangle::public Forme
-{
-public:
-	double hauteur;
-	double largeur;
-
-  	Coordonnee getAncrage();
-  	void setAncrage(Coordonnee c);
-  	virtual double aire();
-  	virtual void afficher(ostream & s);
-protected:
-	Coordonnee ancrage;
-}
-
-class Carre::public Forme
-{
-public:
-	double longueurCote;
-	
-  	Coordonnee getAncrage();
-  	void setAncrage(Coordonnee c);
-  	virtual double aire();
-  	virtual void afficher(ostream & s);
-protected:
-	Coordonnee ancrage;
-	
-}
-
-class Cercle::public Forme
-{
-public:
-	double rayon;	
-	
-  	Coordonnee getAncrage();
-  	void setAncrage(Coordonnee c);
-  	virtual double aire();
-  	virtual void afficher(ostream & s);
-protected:
-	Coordonnee ancrage;
-}
 #endif
