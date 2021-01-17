@@ -16,21 +16,21 @@ using namespace std;
 class Vecteur
 {
 public:
-	Vecteur(int laCapacite);
+	Vecteur();
 	~Vecteur();
  	int AfficherCapacite();
  	int AfficherTaille();
  	void AugmentationCapacite();
  	void Vider();
  	bool AfficherSiVide();
- 	bool AjoutForme();
- 	int RetraitForme();
- 	int Forme();
+ 	bool AjoutForme(Forme* newForme);
+	Forme* RetraitForme(int index);
+ 	Forme* indexForme(int index);
  	void AfficherVecteur();
  private:
- 	int taille;
- 	int capacite;
- 	int *tableau;
+ 	int taille=0;
+ 	int capacite=10;
+ 	Forme **tableau;
  	
 };
 #endif

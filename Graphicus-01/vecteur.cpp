@@ -8,61 +8,61 @@
 
 #include "vecteur.h"
 
-Vecteur::Vecteur(laCapacite=1){
+Vecteur::Vecteur(){
 	
-	tableau= new int [laCapacite];
-	taille=0;
-	capacite=laCapacite;
+	tableau= new Forme* [capacite];
 }
 
 Vecteur::~Vecteur(){
 }
 
-Vecteur::AfficherCapacite(){
+int Vecteur::AfficherCapacite(){
 	return capacite;
 }
 
-Vecteur::AfficherTaille(){
+int Vecteur::AfficherTaille(){
 	return taille;
 }
 
-Vecteur::AugmentationCapacite(){
-	capacite*=2;
-	return capacite;
+void Vecteur::AugmentationCapacite(){
+	Forme** newTableau= new Forme* [capacite*2];
+	for (int i=0; i<capacite; i++){
+		newTableau[i]=tableau[i];
+		}
+		
+	delete []tableau;
+	tableau=newTableau;
 }
 
-Vecteur::Vider(){
+void Vecteur::Vider(){
 
-	if (taille>0||taille<0)
+	if (taille!=0)
 	{
 		taille=0;
 	}
 
 }
 
- Vecteur::AfficherSiVide(){
+bool Vecteur::AfficherSiVide(){
 
  	if (taille==0) return true;
  	else return false;
  }
-Vecteur::AjoutForme(int forme){
-
+ 
+bool Vecteur::AjoutForme(Forme* newforme){
+	
 	if (taille>=capacite){
-		capacite=AugmentationCapacite();
+		AugmentationCapacite();
 	}
 	
-	Forme *newTableau= new Forme [capacite];
-	for (int i=0; i<capacite; i++){
-		newTableau[i]=tableau[i];
-		}
-	delete []tableau;
-	tableau=newTableau;
-	
-	tableau[taille]=forme;
+	tableau[taille]=newforme;
 	taille++;
 	return true;
 }
-Vecteur::RetraitForme(int index){
+
+Forme* Vecteur::RetraitForme(int index){
+	
+	Forme* CopieTableau= tableau[index];
 	
 	if (index<=taille){
 		for (int i=index; i<=taille;i++){
@@ -72,35 +72,32 @@ Vecteur::RetraitForme(int index){
 		}
 			taille--;
 			
-			return tableau;
+			return CopieTableau;
 	}
 	
 	if (index>taille) {
-		tableau=NULL;
-		return tableau;
-	}
-}
-Vecteur::Forme(int index){
-	
-	if (index<=taille){
-		for (int i=0; i<=taille;i++){
-			
-			if (i==index)
-			{
-				return tableau[i];
-			}
-		}
-	}
-	
-	if (index>taille){	
-		tableau=NULL;
-		return tableau;
+		CopieTableau=NULL;
+		return CopieTableau;
 	}
 }
 
-Vecteur::AfficherVecteur(){
+Forme* Vecteur::indexForme(int index){
+	
+	Forme* CopieTableau= tableau[index];
+	
+	if (index<=taille){
+		return CopieTableau;
+	}
+	
+	else {	
+		CopieTableau=NULL;
+		return CopieTableau;
+	}
+}
+void Vecteur::AfficherVecteur(){
 
 	for (int i=0; i<=taille; i++){
 		cout<<tableau[i];
 	}
 }
+ 
