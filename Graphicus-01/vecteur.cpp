@@ -33,13 +33,13 @@ Vecteur::AugmentationCapacite(){
 
 Vecteur::Vider(){
 
-	if (taille>0)
+	if (taille>0||taille<0)
 	{
 		taille=0;
-		delete [] tableau;
 	}
 
 }
+
  Vecteur::AfficherSiVide(){
 
  	if (taille==0) return true;
@@ -47,46 +47,60 @@ Vecteur::Vider(){
  }
 Vecteur::AjoutForme(int forme){
 
-	if (taille==capacite){
+	if (taille>=capacite){
 		capacite=AugmentationCapacite();
-	
-		int *newArrPt= new int [capacite];
-		for (int i=0; i<capacite; i++){
-			newArrPt[i]=tableau[i];
-		}
-		delete []tableau;
-		tableau=newArrPt;
 	}
+	
+	Forme *newTableau= new Forme [capacite];
+	for (int i=0; i<capacite; i++){
+		newTableau[i]=tableau[i];
+		}
+	delete []tableau;
+	tableau=newTableau;
 	
 	tableau[taille]=forme;
 	taille++;
+	return true;
 }
 Vecteur::RetraitForme(int index){
-	for (int i=0; i<=taille;i++){
-		if (i==index)
-		{
-			return tableau[i];
+	
+	if (index<=taille){
+		for (int i=index; i<=taille;i++){
+			if (i+1<capacite){
+				tableau[i]=tableau[i+1];
+			}
 		}
+			taille--;
+			
+			return tableau;
 	}
 	
-	return tableau;
+	if (index>taille) {
+		tableau=NULL;
+		return tableau;
+	}
 }
 Vecteur::Forme(int index){
 	
-	for (int i=0; i<=taille;i++){
-		if (i==index)
-		{
-			return tableau[i];
+	if (index<=taille){
+		for (int i=0; i<=taille;i++){
+			
+			if (i==index)
+			{
+				return tableau[i];
+			}
 		}
 	}
 	
-	tableau=0;
-	return tableau;
+	if (index>taille){	
+		tableau=NULL;
+		return tableau;
+	}
 }
+
 Vecteur::AfficherVecteur(){
 
 	for (int i=0; i<=taille; i++){
 		cout<<tableau[i];
 	}
 }
- 	
