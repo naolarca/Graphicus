@@ -11,7 +11,8 @@
 
 void Tests::tests_unitaires_formes()
 {
-	Rectangle test;
+   // Tests sur les formes geometriques
+   Rectangle test;
 	Coordonnee c, c1;
 	Dimension d, d1;
 	
@@ -31,10 +32,6 @@ void Tests::tests_unitaires_formes()
 	d = test.GetSize();
 	cout << "L'origine du rectangle est au point(" << c.x << "," << c.y << ")" << endl;
 	cout <<"Le rectanble mesure "<< d.x << " par "<< d.y << endl;
-
-	
-	
-   // Tests sur les formes geometriques
 }
 
 void Tests::tests_unitaires_vecteur()

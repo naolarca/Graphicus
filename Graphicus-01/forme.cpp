@@ -35,7 +35,6 @@ void Forme::setAncrage(Coordonnee c)
 {
    ancrage = c;
 }
-
 ///Rectangle
 Rectangle::Rectangle()
 {
@@ -74,6 +73,7 @@ double Rectangle::aire()
 void Rectangle::afficher(ostream & s)
 {
 }
+
 ///Carre
 
 Carre::Carre()
@@ -139,13 +139,14 @@ return rayon;
 void Cercle::SetSize(int x)
 {
 	rayon = x;
-}
+};
 
 double Cercle::aire()
 {
 	double Aire=PI*rayon*rayon;
 	return Aire;
 }
+
 void Cercle::afficher(ostream & s)
 {
 };

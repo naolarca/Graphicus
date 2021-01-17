@@ -9,7 +9,7 @@
 #define VECTEUR_H
 
 #include <iostream>
-
+#include "forme.h"
 
 using namespace std;
 
@@ -34,3 +34,4 @@ public:
  	
 };
 #endif
+
