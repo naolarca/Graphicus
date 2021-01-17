@@ -19,6 +19,7 @@ class Couche
    	Couche();
    	~Couche();
    	
+   	string ConnaitreEtat;
    	bool ajoutFormeCouche(Forme* NouvelleForme);
    	Forme* retraitFormeCouche(int index);
    	Forme* formeStockee(int index);

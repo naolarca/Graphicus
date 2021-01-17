@@ -8,7 +8,7 @@
 
 #include "canevas.h"
 
-/*Canevas::Canevas()
+Canevas::Canevas()
 {	
 }
 
@@ -26,18 +26,18 @@ bool Canevas::reinitialiser()
 
 bool Canevas::activerCouche(int index)
 {
-	char Activation[]="active";
-	char Desactivation[]="inactive";
+	string Activation="active";
+	string Desactivation="inactive";
 	if (index<=MAX_COUCHES && index>=0){
 		
-		couches[index].changementEtat(Activation[]);
+		couches[index].ChangementEtat(Activation);
 		
 		for (int i=0; i<index; i++){
-			couches[i].changementEtat(Desactivation[]);
+			couches[i].ChangementEtat(Desactivation);
 		}
 		
-		for (int i>index; i<=MAX_COUCHES;i++){
-			couches[i].changementEtat(Desactivation[]);
+		for (int i=index; i<=MAX_COUCHES;i++){
+			couches[i].ChangementEtat(Desactivation);
 		}
 		return true;
 	}
@@ -47,10 +47,10 @@ bool Canevas::activerCouche(int index)
 
 bool Canevas::cacherCouche(int index)
 {
-	char cache[]="cachee";
+	string cache="cachee";
 	if (index<=MAX_COUCHES && index>=0){
 		
-		couches[index].changementEtat(cache[]);
+		couches[index].ChangementEtat(cache);
 		return true;
 	}
 	
@@ -91,18 +91,19 @@ double Canevas::aire()
 bool Canevas::translater(int deltaX, int deltaY)
 {
 	for (int i=0; i<=MAX_COUCHES; i++){
-		if (couches[i].etat[]=="active"){
-			couches[i].TranslationCouche(deltax, deltay);
+		if (couches[i].ConnaitreEtat=="active"){
+			couches[i].TranslationCouche(deltaX, deltaY);
 			return true;
 		}
+	}
 	
 	return false;
 }
 
-void Canevas::afficher(ostream & s)
+/*void Canevas::afficher()
 {
 	for (int i=0; i<=MAX_COUCHES; i++){
 		cout<<"----- Couche "<<i<<endl;
-		couches[i].ContenuCanevas(ostream & s);
+		couches[i].ContenuCanevas();
 	}
 }*/
