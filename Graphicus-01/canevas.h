@@ -24,7 +24,7 @@ public:
    Canevas();
    ~Canevas();
    
-   bool reinitialiser();
+   /*bool reinitialiser();
    
    bool activerCouche(int index);
    bool cacherCouche(int index);
@@ -34,7 +34,7 @@ public:
    
    double aire();
    bool translater(int deltaX, int deltaY);
-   void afficher(ostream & s);
+   void afficher();*/
 
 private:
      Couche couches[MAX_COUCHES];

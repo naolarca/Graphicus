@@ -8,7 +8,7 @@
 
 #include "canevas.h"
 
-Canevas::Canevas()
+/*Canevas::Canevas()
 {	
 }
 
@@ -105,4 +105,4 @@ void Canevas::afficher(ostream & s)
 		cout<<"----- Couche "<<i<<endl;
 		couches[i].ContenuCanevas(ostream & s);
 	}
-}
+}*/
