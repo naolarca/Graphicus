@@ -11,23 +11,26 @@
 #ifndef COUCHE_H
 #define COUCHE_H
 
+#include <string>
 #include "vecteur.h"
 class Couche
 {
-
-	//Les attributs:
-	
-	//Les méthodes:
    public:
-   	void stockageForme();
-   	bool ajoutForme();
-   	int retraitForme();
-   	int formeStockee();
-   	double AireCouche();
+   	Couche();
+   	~Couche();
+   	
+   	bool ajoutFormeCouche(Forme* NouvelleForme);
+   	Forme* retraitFormeCouche(int index);
+   	Forme* formeStockee(int index);
+   	float AireCouche();
    	bool TranslationCouche(int deltax, int deltay);
    	bool ReinitialisationCouche();
-   	bool ChangementEtat(int etat);
-   	double ContenuCanevas (float x, float y);
+   	bool ChangementEtat(string nouvelEtat);
+   	/*void ContenuCanevas ();*/
+
+   private:
+   	Vecteur NomCouche;
+   	string etat;
    	
 };
 
