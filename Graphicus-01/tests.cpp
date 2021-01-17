@@ -11,27 +11,31 @@
 
 void Tests::tests_unitaires_formes()
 {
-   // Tests sur les formes geometriques
-   Rectangle test;
+	Rectangle test;
 	Coordonnee c, c1;
 	Dimension d, d1;
 	
 	c = test.getAncrage();
 	d = test.GetSize();
-	cout << "L'origine du rectangle est au point (" << c.x << "," << c.y << ")" << endl;
-	cout <<"Le rectanble mesure "<< d.x << " par "<< d.y << endl;
-
+	/*cout << "L'origine du rectangle est au point (" << c.x << "," << c.y << ")" << endl;
+	cout <<"Le rectanble mesure "<< d.l << " par "<< d.h << endl;
+	*/
+	test.afficher(std::cout);
 	cout << "Dimension et point d'ancrage modifié" << endl;
 	c1.x = 20;
 	c1.y = 20;
-	d1.x = 10;
-	d1.y= 15;
+	d1.l = 10;
+	d1.h= 15;
 	test.setAncrage(c1);
 	test.SetSize(d1);
 	c = test.getAncrage();
 	d = test.GetSize();
 	cout << "L'origine du rectangle est au point(" << c.x << "," << c.y << ")" << endl;
-	cout <<"Le rectanble mesure "<< d.x << " par "<< d.y << endl;
+	cout <<"Le rectanble mesure "<< d.l << " par "<< d.h << endl;
+
+	
+	
+   // Tests sur les formes geometriques
 }
 
 void Tests::tests_unitaires_vecteur()

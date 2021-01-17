@@ -35,13 +35,14 @@ void Forme::setAncrage(Coordonnee c)
 {
    ancrage = c;
 }
+
 ///Rectangle
 Rectangle::Rectangle()
 {
 	ancrage.x = 0;
 	ancrage.y = 0;
-	d.x = 1;
-	d.y =1;
+	d.l = 1;
+	d.h =1;
 }
 
 Rectangle::Rectangle(Coordonnee c, Dimension recd)
@@ -66,12 +67,15 @@ void Rectangle::SetSize(Dimension recd)
 
 double Rectangle::aire()
 {
-	double Aire=d.x*d.y;
+	double Aire=d.l*d.h;
 	return Aire;
 }
 
 void Rectangle::afficher(ostream & s)
 {
+	double resultat = 
+	
+	cout << "Rectangle(x=" << c.x << ", y=" << c.y << ", l=" << d.l << ", h=" << d.h < ", aire=" << d.l*d.h << endl;
 }
 
 ///Carre
@@ -139,14 +143,13 @@ return rayon;
 void Cercle::SetSize(int x)
 {
 	rayon = x;
-};
+}
 
 double Cercle::aire()
 {
 	double Aire=PI*rayon*rayon;
 	return Aire;
 }
-
 void Cercle::afficher(ostream & s)
 {
 };
