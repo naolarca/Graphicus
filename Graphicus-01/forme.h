@@ -28,7 +28,7 @@ public:
   virtual void afficher(ostream & s) = 0;
 protected:
 	Coordonnee ancrage;
-}
+};
 
 class Rectangle : public Forme
 {
@@ -37,12 +37,14 @@ public:
 	Rectangle(Coordonnee c, Dimension recd);
 	~Rectangle();
 	Dimension GetSize();
+	double aire();
 	void SetSize(Dimension recd);
+	void afficher(ostream & s);
 
 	
 private:
 	Dimension d;
-}
+};
 
 
 class Carre : public Forme
@@ -52,12 +54,13 @@ public:
 	Carre(Coordonnee c, int x);
 	~Carre();
 	int GetSize();
+	double aire();
 	void SetSize(int x);
-
+	void afficher(ostream & s);
 	
 private:
 	int cote;
-}
+};
 
 class Cercle : public Forme
 {
@@ -66,7 +69,9 @@ public:
 	Cercle(Coordonnee c, int x);
 	~Cercle();
 	int GetSize();
+	double aire();
 	void SetSize(int x);
+	void afficher(ostream & s);
 
 	
 private:

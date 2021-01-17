@@ -15,8 +15,7 @@ tests.o: tests.cpp tests.h
 canevas.o: canevas.cpp canevas.h tests.h
 	g++ canevas.cpp -g -c
 
-couche.o: couche.cpp couche.h canevas.h tests.h
-	g++ couche.cpp -g -c
+
 
 forme.o: forme.cpp forme.h canevas.h tests.h coordonnee.h
 	g++ forme.cpp -g -c

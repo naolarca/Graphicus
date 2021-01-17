@@ -22,7 +22,7 @@ class Couche
    	void stockageForme();
    	bool ajoutForme();
    	int retraitForme();
-   	int formeStockee()
+   	int formeStockee();
    	double AireCouche();
    	bool TranslationCouche(int deltax, int deltay);
    	bool ReinitialisationCouche();
