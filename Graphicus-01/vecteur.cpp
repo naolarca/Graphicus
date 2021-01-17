@@ -100,4 +100,4 @@ void Vecteur::AfficherVecteur(){
 		cout<<tableau[i];
 	}
 }
- 
+ 	

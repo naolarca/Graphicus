@@ -24,9 +24,9 @@ public:
    Canevas();
    ~Canevas();
    
-   /*bool reinitialiser();
+   bool reinitialiser();
    
-   bool activerCouche(int index);
+   /*bool activerCouche(int index);
    bool cacherCouche(int index);
    
    bool ajouterForme(Forme *p_forme);
