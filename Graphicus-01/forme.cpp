@@ -8,7 +8,7 @@
 ********/
 
 #include "forme.h"
-const double PI=3.14;
+const double PI=3.1415;
 
 Forme::Forme(int x1, int y1)
 {
@@ -72,10 +72,9 @@ double Rectangle::aire()
 }
 
 void Rectangle::afficher(ostream & s)
-{
-	double resultat = 
+{	
+	cout << "Rectangle(x=" << ancrage.x << ", y=" << ancrage.y << ", l=" << d.l << ", h=" << d.h << ", aire=" << d.l*d.h << ")" << endl;
 	
-	cout << "Rectangle(x=" << c.x << ", y=" << c.y << ", l=" << d.l << ", h=" << d.h < ", aire=" << d.l*d.h << endl;
 }
 
 ///Carre
@@ -115,6 +114,10 @@ double Carre::aire()
 
 void Carre::afficher(ostream & s)
 {
+
+cout << "Carre (x=" << ancrage.x << ", y=" << ancrage.y << ", c=" << cote << ", aire=" << cote*cote<< ")" << endl;
+
+
 }
 ///Cercle
 
@@ -152,4 +155,5 @@ double Cercle::aire()
 }
 void Cercle::afficher(ostream & s)
 {
+cout << "Cercle (x=" << ancrage.x << ", y=" << ancrage.y << ", r=" << rayon << ", aire=" << PI*rayon*rayon<< ")" << endl;
 };

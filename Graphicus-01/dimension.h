@@ -3,8 +3,8 @@
 
 struct Dimension
 {
-	int x;
-	int y;
+	int l;
+	int h;
 };
 
 #endif

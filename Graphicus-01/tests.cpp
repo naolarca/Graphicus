@@ -11,32 +11,65 @@
 
 void Tests::tests_unitaires_formes()
 {
-	Rectangle test;
+  // Tests sur les formes geometriques
+  
+	//TEST DU RECTANGLE
+	Rectangle testr;
 	Coordonnee c, c1;
 	Dimension d, d1;
 	
-	c = test.getAncrage();
-	d = test.GetSize();
-	/*cout << "L'origine du rectangle est au point (" << c.x << "," << c.y << ")" << endl;
-	cout <<"Le rectanble mesure "<< d.l << " par "<< d.h << endl;
-	*/
-	test.afficher(std::cout);
+	c = testr.getAncrage();
+	d = testr.GetSize();
+
+	testr.afficher(std::cout);
 	cout << "Dimension et point d'ancrage modifié" << endl;
+	
 	c1.x = 20;
 	c1.y = 20;
 	d1.l = 10;
 	d1.h= 15;
-	test.setAncrage(c1);
-	test.SetSize(d1);
-	c = test.getAncrage();
-	d = test.GetSize();
-	cout << "L'origine du rectangle est au point(" << c.x << "," << c.y << ")" << endl;
-	cout <<"Le rectanble mesure "<< d.l << " par "<< d.h << endl;
-
+	
+	testr.setAncrage(c1);
+	testr.SetSize(d1);
+	c = testr.getAncrage();
+	d = testr.GetSize();
+	
+	testr.afficher(std::cout);
+	
+	//TEST DU CARRE
+	
+	Carre testc;
+	int cote, x;
+	
+	c = testc.getAncrage();
+	cote = testc.GetSize();
+	
+	testc.afficher(std::cout);
+	cout << "Dimension et point d'ancrage modifié" << endl;
+	
+	c1.x = 3;
+	c1.y = 2;
+	testc.SetSize(x = 4);
+	testc.setAncrage(c1);
+	c = testc.getAncrage();
+	cote = testc.GetSize();
+	
+	testc.afficher(std::cout);
 	
 	
-   // Tests sur les formes geometriques
+	//TEST DU CERCLE
+	
+	int rayon;
+	
+	cout<<"Cercle défini automatiquement avec les paramêtres suivant :"<<endl;
+	c.x = 8;
+	c.y = -6;
+	rayon = 4;
+	Cercle testce(c, rayon);
+	testce.afficher(std::cout);
+		
 }
+
 
 void Tests::tests_unitaires_vecteur()
 {
