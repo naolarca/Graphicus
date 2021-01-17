@@ -3,7 +3,7 @@
 # 12 janvier 2021 
 #Laboratoire APP1
 #
-graphicus-01: graphicus-01.o tests.o canevas.o couche.o forme.o
+graphicus-01: graphicus-01.o tests.o forme.o
 	g++ -o graphicus-01 graphicus-01.o tests.o canevas.o forme.o
 
 graphicus-01.o: graphicus-01.cpp tests.h
@@ -12,8 +12,7 @@ graphicus-01.o: graphicus-01.cpp tests.h
 tests.o: tests.cpp tests.h
 	g++ tests.cpp -g -c
 
-canevas.o: canevas.cpp canevas.h tests.h
-	g++ canevas.cpp -g -c
+
 
 
 

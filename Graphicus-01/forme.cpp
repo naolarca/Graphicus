@@ -65,12 +65,15 @@ void Rectangle::SetSize(Dimension recd)
 	d = recd;
 }
 
-Rectangle::aire()
+double Rectangle::aire()
 {
 	double Aire=d.x*d.y;
 	return Aire;
 }
 
+void Rectangle::afficher(ostream & s)
+{
+}
 ///Carre
 
 Carre::Carre()
@@ -106,6 +109,9 @@ double Carre::aire()
 	return Aire;
 }
 
+void Carre::afficher(ostream & s)
+{
+}
 ///Cercle
 
 Cercle::Cercle()
@@ -133,10 +139,13 @@ return rayon;
 void Cercle::SetSize(int x)
 {
 	rayon = x;
-};
+}
 
 double Cercle::aire()
 {
 	double Aire=PI*rayon*rayon;
 	return Aire;
 }
+void Cercle::afficher(ostream & s)
+{
+};

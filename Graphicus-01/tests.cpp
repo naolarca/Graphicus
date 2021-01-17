@@ -12,18 +12,26 @@
 void Tests::tests_unitaires_formes()
 {
 	Rectangle test;
-	cout <<"Le rectanble mesure"<< test.GetSize() << endl;
-	cout << test.getAncrage() << endl;
-	Coordonnee c;
-	c.x = 20;
-	c.y = 20;
-	Dimension recd;
-	recd.x = 10;
-	recd.y= 15;
-	test.setAncrage(Coordonnee c);
-	test.SetSize(Dimension recd);
-	cout << test.GetSize() <<endl;
-	cout << test.getAncrage() << endl;
+	Coordonnee c, c1;
+	Dimension d, d1;
+	
+	c = test.getAncrage();
+	d = test.GetSize();
+	cout << "L'origine du rectangle est au point (" << c.x << "," << c.y << ")" << endl;
+	cout <<"Le rectanble mesure "<< d.x << " par "<< d.y << endl;
+
+	cout << "Dimension et point d'ancrage modifié" << endl;
+	c1.x = 20;
+	c1.y = 20;
+	d1.x = 10;
+	d1.y= 15;
+	test.setAncrage(c1);
+	test.SetSize(d1);
+	c = test.getAncrage();
+	d = test.GetSize();
+	cout << "L'origine du rectangle est au point(" << c.x << "," << c.y << ")" << endl;
+	cout <<"Le rectanble mesure "<< d.x << " par "<< d.y << endl;
+
 	
 	
    // Tests sur les formes geometriques
