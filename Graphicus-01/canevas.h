@@ -32,7 +32,7 @@ public:
    bool ajouterForme(Forme *p_forme);
    bool retirerForme(int index);
    
-   /*double aire();*/
+   double aire();
    bool translater(int deltaX, int deltaY);
    void afficher();
 

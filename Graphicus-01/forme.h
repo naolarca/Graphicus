@@ -39,7 +39,7 @@ public:
 	Dimension GetSize();
 	double aire() override;
 	void SetSize(Dimension recd);
-	void afficher(ostream & s);
+	void afficher(ostream & s) override;
 
 	
 private:
@@ -56,7 +56,7 @@ public:
 	int GetSize();
 	double aire() override;
 	void SetSize(int x);
-	void afficher(ostream & s);
+	void afficher(ostream & s) override;
 	
 private:
 	int cote;
@@ -71,7 +71,7 @@ public:
 	int GetSize();
 	double aire() override;
 	void SetSize(int x);
-	void afficher(ostream & s);
+	void afficher(ostream & s) override;
 
 	
 private:

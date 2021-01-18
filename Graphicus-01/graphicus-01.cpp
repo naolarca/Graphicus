@@ -13,7 +13,7 @@ int main()
 {
    Tests tests;
    
-   tests.tests_unitaires();
+   tests.tests_unitaires_canevas();
    return 0;
 }
 

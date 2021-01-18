@@ -43,10 +43,8 @@ Forme* Couche::retraitFormeCouche(int index){
 		return resultat;
 	}
 	
-	else{
-		resultat=NULL;
-		return resultat;
-	}
+	resultat=NULL;
+	return resultat;
 }
 
 Forme* Couche::formeStockee(int index)
@@ -61,13 +59,12 @@ double Couche::AireCouche()
 	double AireTotale=0.0;
 	
 	//pour avoir la taille
-	int taille=NomCouche.AfficherTaille();
+	int taille=ConnaitreTaille();
 	
-	for(int i=0; i<=taille;i++){
+	for(int i=0; i<taille;i++){
 		Forme* retour= NomCouche.indexForme(i);
 		AireTotale+=retour->aire();	
 	}
-	
 	return AireTotale;
 }
 
@@ -77,14 +74,14 @@ bool Couche::TranslationCouche(int deltax, int deltay)
 	int taille=ConnaitreTaille();
 	
 	if (etat!="inactive"){
-		for (int i=0; i<=taille; i++){
+		for (int i=0; i<taille; i++){
 		
 			(NomCouche.indexForme(i))->translater(deltax, deltay);
-			return true;
 		}
+		return true;
 	}
 	
-	else return false;
+	return false;
 }
 
 bool Couche::ReinitialisationCouche()
@@ -98,7 +95,7 @@ bool Couche::ReinitialisationCouche()
 		return true;
 	}
 	
-	else return false;
+	return false;
 }
 
 bool Couche::ChangementEtat(string nouvelEtat)
@@ -119,14 +116,9 @@ bool Couche::ChangementEtat(string nouvelEtat)
 		return true;
 	}
 	
-	else{
-		/*for(int i=0; i<=taille;i++){
-			Forme* retour= NomCouche.IndexForme(i);
-			
-		}*/
-		etat="cachee";
-		return true;
-	}
+	
+	etat="cachee";
+	return true;
 	
 }
 
@@ -135,18 +127,18 @@ void Couche::ContenuCanevas ()
 	//pour avoir la taille
 	int taille=ConnaitreTaille();
 	
-	if (etat=="active"||etat=="inactive"){
-		for (int j=0; j<=taille; j++){
-			(NomCouche.indexForme(j))->afficher(std::cout);
-		}
-	}
-	
 	if (etat=="initialise"){
 		cout<<"Couche initialisee"<<endl;
 	}
 	
 	if (etat=="cachee"){
 		cout<<"Couche cachee"<<endl;
+	}
+	
+	else{
+		for (int j=0; j<taille; j++){
+			(NomCouche.indexForme(j))->afficher(std::cout);
+		}
 	}
 }	
 

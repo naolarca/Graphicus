@@ -16,7 +16,7 @@ Canevas::~Canevas(){
 
 bool Canevas::reinitialiser()
 {
-	for (int i=0; i<=MAX_COUCHES;i++){
+	for (int i=0; i<MAX_COUCHES;i++){
 		couches[i].ReinitialisationCouche();
 	}
    return true;
@@ -26,9 +26,9 @@ bool Canevas::activerCouche(int index)
 {
 	string Activation="active";
 	string Desactivation="inactive";
-	if (index<=MAX_COUCHES && index>=0){
+	if (index<MAX_COUCHES && index>=0){
 		
-		for (int i=0; i<=MAX_COUCHES; i++){
+		for (int i=0; i<MAX_COUCHES; i++){
 			if (couches[i].ConnaitreEtat()=="active"){
 				couches[i].ChangementEtat(Desactivation);
 			}
@@ -37,56 +37,56 @@ bool Canevas::activerCouche(int index)
 		return true;
 	}
 	
-	else return false;
+	return false;
 }
 
 bool Canevas::cacherCouche(int index)
 {
 	string cache="cachee";
-	if (index<=MAX_COUCHES && index>=0){
+	if (index<MAX_COUCHES && index>=0){
 		couches[index].ChangementEtat(cache);
 		return true;
 	}
 	
-	else return false;
+	return false;
 }
 
 bool Canevas::ajouterForme(Forme *p_forme)
 {
-	for (int i=0; i<=MAX_COUCHES; i++){
-		activerCouche(i);
-		couches[i].ajoutFormeCouche(p_forme);
+	for (int i=0; i<MAX_COUCHES; i++){
+		if (couches[i].ConnaitreEtat()=="active"){
+			couches[i].ajoutFormeCouche(p_forme);
+		}
 	}
 	
 	return true;
-
 }
 
 bool Canevas::retirerForme(int index)
 {
-	if (index<=MAX_COUCHES && index>=0){
+	if (index<MAX_COUCHES && index>=0){
 		activerCouche(index);
 		couches[index].retraitFormeCouche(index);
 		return true;
 	}
 	
-	else return false;
+	return false;
 }
 
-/*double Canevas::aire()
+double Canevas::aire()
 {
-	double AireTotale=0;
+	double AireTotale=0.0;
 	
-	for (int i=0; i<=MAX_COUCHES;i++){
+	for (int i=0; i<MAX_COUCHES;i++){
 		AireTotale+=couches[i].AireCouche();
 	}
 	
 	return AireTotale;
-}*/
+}
 
 bool Canevas::translater(int deltaX, int deltaY)
 {
-	for (int i=0; i<=MAX_COUCHES; i++){
+	for (int i=0; i<MAX_COUCHES; i++){
 		if (couches[i].ConnaitreEtat()=="active"){
 			couches[i].TranslationCouche(deltaX, deltaY);
 			return true;
@@ -98,7 +98,7 @@ bool Canevas::translater(int deltaX, int deltaY)
 
 void Canevas::afficher()
 {
-	for (int i=0; i<=MAX_COUCHES; i++){
+	for (int i=0; i<MAX_COUCHES; i++){
 		cout<<"----- Couche "<<i<<endl;
 		couches[i].ContenuCanevas();
 	}

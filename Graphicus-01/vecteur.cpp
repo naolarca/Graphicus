@@ -40,7 +40,7 @@ void Vecteur::Vider(){
 bool Vecteur::AfficherSiVide(){
 
  	if (taille==0) return true;
- 	else return false;
+ 	return false;
  }
  
 bool Vecteur::AjoutForme(Forme* newforme){
@@ -69,10 +69,9 @@ Forme* Vecteur::RetraitForme(int index){
 			return CopieTableau;
 	}
 	
-	if (index>taille) {
-		CopieTableau=NULL;
-		return CopieTableau;
-	}
+	
+	CopieTableau=NULL;
+	return CopieTableau;
 }
 
 Forme* Vecteur::indexForme(int index){
@@ -82,11 +81,9 @@ Forme* Vecteur::indexForme(int index){
 	if (index<=taille){
 		return CopieTableau;
 	}
-	
-	else {	
-		CopieTableau=NULL;
-		return CopieTableau;
-	}
+
+	CopieTableau=NULL;
+	return CopieTableau;
 }
 void Vecteur::AfficherVecteur(){
 

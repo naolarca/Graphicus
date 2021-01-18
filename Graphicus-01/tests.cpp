@@ -168,7 +168,7 @@ void Tests::tests_unitaires_couche()
 	cout<<testCouche.formeStockee(0)<<endl;
    	
    //test Aire
-   	//cout<<"L'aire de la couche est:"<<testCouche.AireCouche()<<endl;
+   	cout<<"L'aire de la couche est:"<<testCouche.AireCouche()<<endl;
    
    //test translation
    	cout<<"translation de 3x et 4y:"<<endl;
@@ -229,24 +229,24 @@ void Tests::tests_unitaires_canevas()
    Canevas testCanevas;
    cout<<"************************************************************"<<endl;
    //test reinitialisation
-   /*if(testCanevas.reinitialiser()==true) cout<<"reinitialisation reussie"<<endl;
-   else cout<<"reinitialisation non reussie"<<endl;*/
+   if(testCanevas.reinitialiser()==true) cout<<"reinitialisation reussie"<<endl;
+   else cout<<"reinitialisation non reussie"<<endl;
 
    //test activation couche
    cout<<"activation couche a l'index 100"<<endl;
    if (testCanevas.activerCouche(100)==true) cout<<"activation reussie"<<endl;
    else cout<<"activation non reussie"<<endl;
    
-   /*cout<<"activation couche a l'index 1"<<endl;
+   cout<<"activation couche a l'index 1"<<endl;
    if (testCanevas.activerCouche(1)==true) cout<<"activation reussie"<<endl;
-   else cout<<"activation non reussie"<<endl;*/
+   else cout<<"activation non reussie"<<endl;
    
    //test cacher couche
    cout<<"cacher couche a l'index 100"<<endl;
    if (testCanevas.activerCouche(100)==true) cout<<"cache reussie"<<endl;
    else cout<<"cache non reussie"<<endl;
    
-   /*cout<<"cache couche a l'index 1"<<endl;
+   cout<<"cache couche a l'index 1"<<endl;
    if (testCanevas.activerCouche(1)==true) cout<<"cache reussie"<<endl;
    else cout<<"cache non reussie"<<endl;
    
@@ -265,28 +265,28 @@ void Tests::tests_unitaires_canevas()
    	cout<<"Forme ajoutee"<<endl;
    }
    	
-   else cout<<"Forme non ajoutee"<<endl;*/
+   else cout<<"Forme non ajoutee"<<endl;
    
    //test retirer forme
    cout<<"On retire une forme"<<endl;
 	cout<<" si on retire la forme a lindex 100:"<<endl;
 	cout<<"La valeur de retour est:"<<testCanevas.retirerForme(100)<<endl;
 	
-	/*cout<<" si on retire la forme a lindex 1:"<<endl;
+	cout<<" si on retire la forme a lindex 1:"<<endl;
 	cout<<"La valeur de retour est:"<<testCanevas.retirerForme(1)<<endl;
 	
    //test aire
-   //cout<<"Laire est:"<< testCanevas.aire()<<endl;
+   cout<<"Laire est:"<< testCanevas.aire()<<endl;
    
    //test translation
-   /*cout<<"translation de 3x et 4y:"<<endl;
+   cout<<"translation de 3x et 4y:"<<endl;
    	if (testCanevas.translater(3,4)==true){
    		cout<<"translation reussie"<<endl;
    	}
-   	else cout<<"translation echouee"<<endl;*/
+   	else cout<<"translation echouee"<<endl;
    
    //test afficher
-   testCanevas.afficher();
+   //testCanevas.afficher();
 }
 
 void Tests::tests_unitaires()
