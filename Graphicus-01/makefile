@@ -3,11 +3,11 @@
 # 12 janvier 2021 
 #Laboratoire APP1
 #
-graphicus-01: graphicus-01.o canevas.o forme.o vecteur.o couche.o tests.o
-	g++ -o graphicus-01 graphicus-01.o canevas.o forme.o vecteur.o couche.o tests.o
+graphicus-02: graphicus-02.o canevas.o forme.o vecteur.o couche.o tests.o
+	g++ -o graphicus-02 graphicus-02.o canevas.o forme.o vecteur.o couche.o tests.o
 
-graphicus-01.o: graphicus-01.cpp tests.h
-	g++ graphicus-01.cpp -g -c
+graphicus-01.o: graphicus-02.cpp tests.h
+	g++ graphicus-02.cpp -g -c
 
 tests.o: tests.cpp tests.h
 	g++ tests.cpp -g -c
