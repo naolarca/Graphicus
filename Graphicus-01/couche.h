@@ -19,11 +19,12 @@ class Couche
    	Couche();
    	~Couche();
    	
-   	string ConnaitreEtat;
+   	string ConnaitreEtat();
+   	int ConnaitreTaille();
    	bool ajoutFormeCouche(Forme* NouvelleForme);
    	Forme* retraitFormeCouche(int index);
    	Forme* formeStockee(int index);
-   	float AireCouche();
+   	double AireCouche();
    	bool TranslationCouche(int deltax, int deltay);
    	bool ReinitialisationCouche();
    	bool ChangementEtat(string nouvelEtat);

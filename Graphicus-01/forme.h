@@ -37,7 +37,7 @@ public:
 	Rectangle(Coordonnee c, Dimension recd);
 	~Rectangle();
 	Dimension GetSize();
-	double aire();
+	double aire() override;
 	void SetSize(Dimension recd);
 	void afficher(ostream & s);
 
@@ -54,7 +54,7 @@ public:
 	Carre(Coordonnee c, int x);
 	~Carre();
 	int GetSize();
-	double aire();
+	double aire() override;
 	void SetSize(int x);
 	void afficher(ostream & s);
 	
@@ -69,7 +69,7 @@ public:
 	Cercle(Coordonnee c, int x);
 	~Cercle();
 	int GetSize();
-	double aire();
+	double aire() override;
 	void SetSize(int x);
 	void afficher(ostream & s);
 

@@ -10,12 +10,19 @@
 
 Couche::Couche(){
 	etat="initialise";
-	ConnaitreEtat=etat;
 }
 
 Couche::~Couche(){
 }
 
+string Couche::ConnaitreEtat(){
+	return etat;
+}
+
+int Couche::ConnaitreTaille(){
+	int taille=NomCouche.AfficherTaille();
+	return taille;
+}
 
 bool Couche::ajoutFormeCouche(Forme* NouvelleForme){
 	if (etat!="inactive"){
@@ -49,16 +56,16 @@ Forme* Couche::formeStockee(int index)
 	return valeurRetour;
 }
 
-float Couche::AireCouche()
+double Couche::AireCouche()
 {
-	float AireTotale=0;
+	double AireTotale=0.0;
 	
 	//pour avoir la taille
 	int taille=NomCouche.AfficherTaille();
 	
 	for(int i=0; i<=taille;i++){
-		
-		AireTotale+=(NomCouche.indexForme(i))->aire();	
+		Forme* retour= NomCouche.indexForme(i);
+		AireTotale+=retour->aire();	
 	}
 	
 	return AireTotale;
@@ -67,7 +74,7 @@ float Couche::AireCouche()
 bool Couche::TranslationCouche(int deltax, int deltay)
 {	
 	//pour avoir la taille
-	int taille=NomCouche.AfficherTaille();
+	int taille=ConnaitreTaille();
 	
 	if (etat!="inactive"){
 		for (int i=0; i<=taille; i++){
@@ -83,10 +90,11 @@ bool Couche::TranslationCouche(int deltax, int deltay)
 bool Couche::ReinitialisationCouche()
 {
 	//pour avoir la taille
-	int taille=NomCouche.AfficherTaille();
+	int taille=ConnaitreTaille();
 	
 	if (taille!=0){
-		NomCouche.Vider();	
+		NomCouche.Vider();
+		etat="initialise";	
 		return true;
 	}
 	
@@ -96,25 +104,14 @@ bool Couche::ReinitialisationCouche()
 bool Couche::ChangementEtat(string nouvelEtat)
 {
 	//pour avoir la taille
-	int taille=NomCouche.AfficherTaille();
+	int taille=ConnaitreTaille();
 	
 	if (nouvelEtat=="initialise"){
 		return false;
 	}
 	if (nouvelEtat=="active"){
-		
-		if(taille==0){
-			taille==1;
-			etat="active";
-			return true;
-		}
-		if (taille<0){
-			return false;
-		}
-		else {
-			etat="active";
-			return true;
-		}
+		etat="active";
+		return true;
 	}
 	
 	if (nouvelEtat=="inactive"){
@@ -123,9 +120,10 @@ bool Couche::ChangementEtat(string nouvelEtat)
 	}
 	
 	else{
-		for(int i=0; i<=taille;i++){
-			(NomCouche.indexForme(i))->aire();	
-		}
+		/*for(int i=0; i<=taille;i++){
+			Forme* retour= NomCouche.IndexForme(i);
+			
+		}*/
 		etat="cachee";
 		return true;
 	}
@@ -135,7 +133,7 @@ bool Couche::ChangementEtat(string nouvelEtat)
 void Couche::ContenuCanevas ()
 {		
 	//pour avoir la taille
-	int taille=NomCouche.AfficherTaille();
+	int taille=ConnaitreTaille();
 	
 	if (etat=="active"||etat=="inactive"){
 		for (int j=0; j<=taille; j++){

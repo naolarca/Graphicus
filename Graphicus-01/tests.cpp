@@ -73,17 +73,26 @@ void Tests::tests_unitaires_vecteur()
 {
    // Tests sur la classe Vecteur
 	Vecteur testVect;
+	cout<<"************************************************************"<<endl;
+	//test afficher capacite
 	cout<<"La capacite du vecteur est:"<< testVect.AfficherCapacite()<<endl;
+	//test afficher taille
 	cout<<"La taille du vecteur est:"<<testVect.AfficherTaille()<<endl;
+	//test capacite double
 	cout<<"La capacite est double:"<<endl;
 	testVect.AugmentationCapacite();
+	cout<<"capacite:"<<testVect.AfficherCapacite()<<endl;
+	//test afficher si vide
 	if (testVect.AfficherSiVide()==true){
 		cout<<"Le vecteur est vide"<<endl;
    	}
    	else cout<<"Le vecteur n'est pas vide"<<endl;
+   	cout<<"taille:"<<testVect.AfficherTaille()<<endl;
+   	//test vider vecteur
    	cout<<"On vide le vecteur"<<endl;
    	testVect.Vider();
-   	
+   	cout<<"taille:"<<testVect.AfficherTaille()<<endl;
+   	//test ajout forme
    	cout<<"On ajoute une forme"<<endl;
    	Forme* PtTest1= new Rectangle;
    	if (testVect.AjoutForme(PtTest1)==true){
@@ -91,6 +100,7 @@ void Tests::tests_unitaires_vecteur()
    	}
    	
    	else cout<<"Forme non ajoutee"<<endl;
+   	cout<<"taille:"<<testVect.AfficherTaille()<<endl;
    	
    	cout<<"Et une deuxieme"<<endl;
    	Forme* PtTest2= new Carre;
@@ -99,26 +109,33 @@ void Tests::tests_unitaires_vecteur()
    	}
    	
 	else cout<<"Forme non ajoutee"<<endl;
-	
+	cout<<"taille:"<<testVect.AfficherTaille()<<endl;
+	//test retirer forme
 	cout<<"On retire une forme"<<endl;
 	cout<<" si on retire la forme a lindex 100:"<<endl;
 	cout<<"La valeur de retour est:"<<testVect.RetraitForme(100)<<endl;
+	cout<<"taille:"<<testVect.AfficherTaille()<<endl;
 	
 	cout<<" si on retire la forme a lindex 1:"<<endl;
 	cout<<"La valeur de retour est:"<<testVect.RetraitForme(1)<<endl;
-	
+	cout<<"taille:"<<testVect.AfficherTaille()<<endl;
+	//test forme a l'index
 	cout<<"La forme a la position 0 est:"<<endl;
 	cout<<testVect.indexForme(0)<<endl;
- 	
+ 	//test afficher vecteur
  	cout<<"Afficher Vecteur:"<<endl;
  	testVect.AfficherVecteur();
+ 	cout<<endl;
+ 	cout<<"taille:"<<testVect.AfficherTaille()<<endl;
+ 	cout<<"capacite:"<<testVect.AfficherCapacite()<<endl;
 }
 
 void Tests::tests_unitaires_couche()
 {
    // Tests sur la classe Couche
    	Couche testCouche;
-   	
+   	cout<<"************************************************************"<<endl;
+   	testCouche.ConnaitreTaille();
    //test ajout
    	cout<<"On ajoute une forme"<<endl;
    	Forme* PtTest1= new Cercle;
@@ -127,6 +144,7 @@ void Tests::tests_unitaires_couche()
    	}
    	
    	else cout<<"Forme non ajoutee"<<endl;
+   	cout<<"taille:"<<testCouche.ConnaitreTaille()<<endl;
    	
    	cout<<"Et une deuxieme"<<endl;
    	Forme* PtTest2= new Carre;
@@ -135,14 +153,16 @@ void Tests::tests_unitaires_couche()
    	}
    	
 	else cout<<"Forme non ajoutee"<<endl;
-	
+	cout<<"taille:"<<testCouche.ConnaitreTaille()<<endl;
    //test retrait
    	cout<<"On retire une forme"<<endl;
 	cout<<" si on retire la forme a lindex 100:"<<endl;
 	cout<<"La valeur de retour est:"<<testCouche.retraitFormeCouche(100)<<endl;
+	cout<<"taille:"<<testCouche.ConnaitreTaille()<<endl;
 	
 	cout<<" si on retire la forme a lindex 1:"<<endl;
 	cout<<"La valeur de retour est:"<<testCouche.retraitFormeCouche(1)<<endl;
+	cout<<"taille:"<<testCouche.ConnaitreTaille()<<endl;
    //test forme stockee
    	cout<<"La forme a la position 0 est:"<<endl;
 	cout<<testCouche.formeStockee(0)<<endl;
@@ -162,35 +182,44 @@ void Tests::tests_unitaires_couche()
    		cout<<"reinitialisation de la couche"<<endl;
    	}
    	else cout<<"reinitialisation echouee"<<endl;
+   	cout<<"taille:"<<testCouche.ConnaitreTaille()<<endl;
+   	cout<<"etat:"<<testCouche.ConnaitreEtat()<<endl;
    
    //test changement etat
    	cout<<"active:"<<endl;
+   	cout<<"**********"<<endl;
    	if (testCouche.ChangementEtat("active")==true){
    		cout<<"changement reussie"<<endl;
    	}
    	else cout<<"changement non reussi"<<endl;
+   	cout<<"etat:"<<testCouche.ConnaitreEtat()<<endl;
    	
    	cout<<"inactive:"<<endl;
+   	cout<<"**********"<<endl;
    	if (testCouche.ChangementEtat("inactive")==true){
    		cout<<"changement reussie"<<endl;
    	}
    	else cout<<"changement non reussi"<<endl;
+   	cout<<"etat:"<<testCouche.ConnaitreEtat()<<endl;
    	
    	cout<<"initialise:"<<endl;
+   	cout<<"**********"<<endl;
    	if (testCouche.ChangementEtat("initialise")==true){
    		cout<<"changement reussie"<<endl;
    	}
    	else cout<<"changement non reussi"<<endl;
+   	cout<<"etat:"<<testCouche.ConnaitreEtat()<<endl;
    	
    	cout<<"cachee:"<<endl;
+   	cout<<"**********"<<endl;
    	if (testCouche.ChangementEtat("cachee")==true){
    		cout<<"changement reussie"<<endl;
    	}
    	else cout<<"changement non reussi"<<endl;
-  
+  	cout<<"etat:"<<testCouche.ConnaitreEtat()<<endl;
    	
    //test contenu canevas
-   	testCouche.ContenuCanevas();
+   	//testCouche.ContenuCanevas();
 
 }
 
@@ -198,7 +227,7 @@ void Tests::tests_unitaires_canevas()
 {
    // Tests sur la classe Canevas
    Canevas testCanevas;
-   
+   cout<<"************************************************************"<<endl;
    //test reinitialisation
    /*if(testCanevas.reinitialiser()==true) cout<<"reinitialisation reussie"<<endl;
    else cout<<"reinitialisation non reussie"<<endl;*/
@@ -243,7 +272,7 @@ void Tests::tests_unitaires_canevas()
 	cout<<" si on retire la forme a lindex 100:"<<endl;
 	cout<<"La valeur de retour est:"<<testCanevas.retirerForme(100)<<endl;
 	
-	cout<<" si on retire la forme a lindex 1:"<<endl;
+	/*cout<<" si on retire la forme a lindex 1:"<<endl;
 	cout<<"La valeur de retour est:"<<testCanevas.retirerForme(1)<<endl;
 	
    //test aire

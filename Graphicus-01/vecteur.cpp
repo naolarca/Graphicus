@@ -25,13 +25,7 @@ int Vecteur::AfficherTaille(){
 }
 
 void Vecteur::AugmentationCapacite(){
-	Forme** newTableau= new Forme* [capacite*2];
-	for (int i=0; i<capacite; i++){
-		newTableau[i]=tableau[i];
-		}
-		
-	delete []tableau;
-	tableau=newTableau;
+	capacite*=2;
 }
 
 void Vecteur::Vider(){
@@ -86,7 +80,7 @@ Forme* Vecteur::indexForme(int index){
 	Forme* CopieTableau= tableau[index];
 	
 	if (index<=taille){
-		return tableau[index];
+		return CopieTableau;
 	}
 	
 	else {	
