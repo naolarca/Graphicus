@@ -308,7 +308,74 @@ void Tests::tests_application()
 void Tests::tests_application_cas_01()
 {
    cout << "TESTS APPLICATION (CAS 01)" << endl; 
-   // Il faut ajouter les operations realisant ce scenario de test.
+   
+   Canevas CanValid;
+   Coordonnee c;
+   Dimension d;
+   
+   CanValid.activerCouche(1);
+   c.x = 2;
+   c.y = 3;
+   Forme* cc1 = new Cercle(c, 2);
+   CanValid.ajouterForme(cc1);
+   
+   c.x = 3;
+   c.y = 6;
+   d.l = 1;
+   d.h = 5;
+   Forme* rc1 = new Rectangle(c, d);
+   CanValid.ajouterForme(rc1);
+   
+   c.x = 0;
+   c.y = 1;
+   Forme* cac1 = new Carre(c, 3);
+   CanValid.ajouterForme(cac1);
+   
+   CanValid.activerCouche(2);
+   c.x = 5;
+   c.y = 0;
+   Forme* cc2 = new Cercle(c,4);
+   CanValid.ajouterForme(cc2);
+   cout << "*************Affichage*************"<< endl;
+   CanValid.afficher();
+   cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
+   
+   CanValid.activerCouche(0);
+   c.x = 5;
+   c.y = 5;
+   Forme* cc0 = new Cercle(c, 5);
+   CanValid.ajouterForme(cc0);
+   
+   c.x = 4;
+   c.y = 4;
+   d.l = 4;
+   d.h = 4;
+   Forme* rc0 = new Rectangle(c, d);
+   CanValid.ajouterForme(rc0);
+   
+   c.x = 2;
+   c.y = 2;
+   Forme* cac0 = new Carre(c, 4);
+   CanValid.ajouterForme(cac0);
+   
+   CanValid.cacherCouche(2);
+   CanValid.activerCouche(1);
+   CanValid.translater(10,10);
+   
+   cout << "*************Affichage*************"<< endl;
+   CanValid.afficher();
+   cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
+   
+   CanValid.retirerForme(0);
+   cout << "*************Affichage*************"<< endl; 
+   CanValid.afficher();
+   cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
+   
+   CanValid.reinitialiser();
+   cout << "*************Affichage*************"<< endl;
+   CanValid.afficher();
+   cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
+   
 }
 
 void Tests::tests_application_cas_02()
