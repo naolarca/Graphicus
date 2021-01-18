@@ -219,7 +219,7 @@ void Tests::tests_unitaires_couche()
   	cout<<"etat:"<<testCouche.ConnaitreEtat()<<endl;
    	
    //test contenu canevas
-   	//testCouche.ContenuCanevas();
+   	testCouche.ContenuCanevas();
 
 }
 
@@ -286,7 +286,7 @@ void Tests::tests_unitaires_canevas()
    	else cout<<"translation echouee"<<endl;
    
    //test afficher
-   //testCanevas.afficher();
+   testCanevas.afficher();
 }
 
 void Tests::tests_unitaires()
