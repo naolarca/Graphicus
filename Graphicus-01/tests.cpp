@@ -346,7 +346,7 @@ void Tests::tests_application_cas_01()
    c.y = 0;
    
    cout<< "La forme ajouté à la couche est la suivante :"<< endl;
-   cout << "Cercle(x = "<< c.x << ", y = " << c.y << ", rayon = 2)"<< endl;
+   cout << "Cercle(x = "<< c.x << ", y = " << c.y << ", rayon = 4)"<< endl;
    Forme* cc2 = new Cercle(c,4);
    CanValid.ajouterForme(cc2);
    
@@ -422,5 +422,113 @@ void Tests::tests_application_cas_01()
 void Tests::tests_application_cas_02()
 {
    cout << "TESTS APPLICATION (CAS 02)" << endl;  
-    // Il faut ajouter les operations realisant ce scenario de test.
+   
+   Canevas CanValid;
+   Coordonnee c;
+   Dimension d;
+   
+   cout<< "***Étape 1 : Activer la couche 1"<<endl;
+   CanValid.activerCouche(1);
+   
+   cout<< "***Étape 2 : Ajouter trois formes géométriques"<<endl;
+   cout<< "Les forment ajouté à la couche sont les suivante :"<< endl;
+   c.x = -4;
+   c.y = 0;
+   cout << "Cercle(x = "<< c.x << ", y = " << c.y << ", rayon = 6)"<< endl;
+   Forme* cc1 = new Cercle(c, 6);
+   CanValid.ajouterForme(cc1);
+   
+   c.x = 1;
+   c.y = 2;
+   d.l = 3;
+   d.h = 4;
+   cout << "Rectangle(x = "<< c.x << ", y = " << c.y << ", l = "<< d.l << ", h = " << d.h << ")" << endl;
+   Forme* rc1 = new Rectangle(c, d);
+   CanValid.ajouterForme(rc1);
+   
+   c.x = 6;
+   c.y = 6;
+   cout << "Carre(x = " << c.x << ", y = " << c.y << ", cote = 6)"<< endl;
+   Forme* cac1 = new Carre(c, 6);
+   CanValid.ajouterForme(cac1);
+   
+   cout << "***Étape 3 : Activer la couche 2"<< endl;
+   CanValid.activerCouche(2);
+   
+   cout << "***Étape 4 : Ajouter une forme"<< endl;
+   c.x = 0;
+   c.y = 5;
+   
+   cout<< "La forme ajouté à la couche est la suivante :"<< endl;
+   cout << "Cercle(x = "<< c.x << ", y = " << c.y << ", rayon = 1)"<< endl;
+   Forme* cc2 = new Cercle(c,1);
+   CanValid.ajouterForme(cc2);
+   
+   cout << "***Étape 5 : Afficher le canevas"<< endl;
+   CanValid.afficher();
+   
+   cout<< "***Étape 6 : Afficher l'aire du canevas" << endl;
+   cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
+   
+   cout<< "***Étape 7 : Activer la couche 0"<< endl;
+   CanValid.activerCouche(0);
+   
+   cout << "***Étape 8 : Ajouter trois formes géométrique différentes" << endl;
+   cout<< "Les forment ajouté à la couche sont les suivante :"<< endl;
+   
+   c.x = 7;
+   c.y = -7;
+   cout << "Cercle(x = "<< c.x << ", y = " << c.y << ", rayon = 3)"<< endl;
+   Forme* cc0 = new Cercle(c, 3);
+   CanValid.ajouterForme(cc0);
+   
+   c.x = 3;
+   c.y = 2;
+   d.l = 6;
+   d.h = 1;
+   cout << "Rectangle(x = "<< c.x << ", y = " << c.y << ", l = "<< d.l << ", h = " << d.h << ")" << endl;
+   Forme* rc0 = new Rectangle(c, d);
+   CanValid.ajouterForme(rc0);
+   
+   c.x = 2;
+   c.y = 6;
+   cout <<"Carre(x = "<< c.x << ", y = " << c.y << ", cote = 7)"<< endl;
+   Forme* cac0 = new Carre(c, 7);
+   CanValid.ajouterForme(cac0);
+   
+   cout << "***Étape 9 : Cacher la couche 2" <<endl;
+   CanValid.cacherCouche(2);
+   
+   cout << "***Étape 10 : Activer la couche 1"<< endl;
+   CanValid.activerCouche(1);
+   
+   cout << "***Étape 11 : Translater la couche avec des valeurs non nulles"<<endl;
+   cout << "Les valeurs utilisé sont : (x = 10, y= 10)" << endl;
+   CanValid.translater(10,10);
+   
+   cout << "***Étape 12 : Afficher le canevas" << endl;
+   CanValid.afficher();
+   
+   cout << "***Étape 13 : Afficher l'aire du canevas"<<endl;
+   cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
+   
+   cout << "***Étape 14 : Retirer la première forme de la couche" << endl;
+   CanValid.retirerForme(0);
+   
+   cout << "***Étape 15 : Afficher le canevas"<< endl; 
+   CanValid.afficher();
+   
+   cout << "***Étape 16 : Afficher l'aire du canevas" <<endl;
+   cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
+   
+   cout << "***Étape 17 : Réinitialiser le canevas"<< endl;
+   CanValid.reinitialiser();
+   
+   cout << "***Étape 18 : Afficher le canevas"<< endl; 
+   CanValid.afficher();
+   
+   cout << "***Étape 19 : Afficher l'aire du canevas" <<endl;
+   cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
+   
+   cout << "Fin du test de validation"<< endl;
 }
