@@ -86,7 +86,7 @@ Forme* Vecteur::indexForme(int index){
 	Forme* CopieTableau= tableau[index];
 	
 	if (index<=taille){
-		return CopieTableau;
+		return tableau[index];
 	}
 	
 	else {	

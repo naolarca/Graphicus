@@ -8,12 +8,10 @@
 
 #include "canevas.h"
 
-Canevas::Canevas()
-{	
+Canevas::Canevas(){	
 }
 
-Canevas::~Canevas()
-{
+Canevas::~Canevas(){
 }
 
 bool Canevas::reinitialiser()
@@ -100,10 +98,10 @@ bool Canevas::translater(int deltaX, int deltaY)
 	return false;
 }
 
-/*void Canevas::afficher()
+void Canevas::afficher()
 {
 	for (int i=0; i<=MAX_COUCHES; i++){
 		cout<<"----- Couche "<<i<<endl;
 		couches[i].ContenuCanevas();
 	}
-}*/
+}

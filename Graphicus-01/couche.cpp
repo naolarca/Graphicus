@@ -132,58 +132,14 @@ bool Couche::ChangementEtat(string nouvelEtat)
 	
 }
 
-/*void Couche::ContenuCanevas ()
-{
+void Couche::ContenuCanevas ()
+{		
 	//pour avoir la taille
 	int taille=NomCouche.AfficherTaille();
 	
-	//pour avoir ancrage
-	Coordonnee donneAncrage=getAncrage();
-	
-	//pour avoir l et h
-	Dimension size=GetSize();
-
-	
-	
 	if (etat=="active"||etat=="inactive"){
 		for (int j=0; j<=taille; j++){
-			
-			//Pour rectangle
-			if (NomCouche.indexForme(j)== Rectangle*){
-				Rectangle* NomForme=NomCouche.indexForme(j);
-			
-				cout<<"Rectangle";
-				cout<<"( x="<<(NomForme)->donneeAncrage.x;
-				cout<<", y="<<(NomForme)->donneeAncrage.y;
-				cout<<", l="<<(NomForme)->size.x;
-				cout<<", h="<<(NomForme)->size.y;				
-				cout<<", aire="<<(NomForme)->aire();
-				cout<<")"<<endl;	
-			}
-			
-			//Pour carre
-			if (NomCouche.indexForme(j)== Carre*){
-				Carre* NomForme=NomCouche.indexForme(j);
-				
-				cout<<"Carre";
-				cout<<"( x="<<(NomForme)->donneeAncrage.x;
-				cout<<", y="<<(NomForme)->donneeAncrage.y;
-				cout<<", c="<<(NomForme)->GetSize();
-				cout<<", aire="<<(NomForme)->aire();
-				cout<<")"<<endl;
-			}
-			
-			//Pour cercle
-			if (NomCouche.indexForme(j)== Cercle*){
-				Cercle* NomForme=NomCouche.indexForme(j);
-				
-				cout<<"Cercle";
-				cout<<"( x="<<(NomForme)->donneeAncrage.x;
-				cout<<", y="<<(NomForme)->donneeAncrage.y;
-				cout<<", r="<<(NomForme)->GetSize();
-				cout<<", aire="<<(NomForme)->aire();
-				cout<<")"<<endl;
-			}
+			(NomCouche.indexForme(j))->afficher(std::cout);
 		}
 	}
 	
@@ -194,5 +150,5 @@ bool Couche::ChangementEtat(string nouvelEtat)
 	if (etat=="cachee"){
 		cout<<"Couche cachee"<<endl;
 	}
-} */	
+}	
 
