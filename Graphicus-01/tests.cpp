@@ -302,6 +302,10 @@ void Tests::tests_application()
 {
    // Fait tous les tests applicatifs
    tests_application_cas_01();
+   cout << ""<< endl;
+   cout << "*******************************"<< endl;
+   cout << ""<< endl;
+   
    tests_application_cas_02();
 }
 
@@ -531,4 +535,4 @@ void Tests::tests_application_cas_02()
    cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
    
    cout << "Fin du test de validation"<< endl;
-}
+};

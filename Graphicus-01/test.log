@@ -1,2 +1,171 @@
 TESTS APPLICATION (CAS 01)
+***Étape 1 : Activer la couche 1
+***Étape 2 : Ajouter trois formes géométriques
+Les forment ajouté à la couche sont les suivante :
+Cercle(x = 2, y = 3, rayon = 2)
+Rectangle(x = 3, y = 6, l = 1, h = 5)
+Carre(x = 0, y = 1, cote = 3)
+***Étape 3 : Activer la couche 2
+***Étape 4 : Ajouter une forme
+La forme ajouté à la couche est la suivante :
+Cercle(x = 5, y = 0, rayon = 4)
+***Étape 5 : Afficher le canevas
+----- Couche 0
+----- Couche 1
+Cercle (x=2, y=3, r=2, aire=12.566)
+Rectangle(x=3, y=6, l=1, h=5, aire=5)
+Carre (x=0, y=1, c=3, aire=9)
+----- Couche 2
+Cercle (x=5, y=0, r=4, aire=50.264)
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+***Étape 6 : Afficher l'aire du canevas
+L'aire total du caneva est de :76.83
+***Étape 7 : Activer la couche 0
+***Étape 8 : Ajouter trois formes géométrique différentes
+Les forment ajouté à la couche sont les suivante :
+Cercle(x = 5, y = 5, rayon = 5)
+Rectangle(x = 4, y = 4, l = 4, h = 4)
+Carre(x = 2, y = 2, cote = 4)
+***Étape 9 : Cacher la couche 2
+***Étape 10 : Activer la couche 1
+***Étape 11 : Translater la couche avec des valeurs non nulles
+Les valeurs utilisé sont : (x = 10, y= 10)
+***Étape 12 : Afficher le canevas
+----- Couche 0
+Cercle (x=5, y=5, r=5, aire=78.5375)
+Rectangle(x=4, y=4, l=4, h=4, aire=16)
+Carre (x=2, y=2, c=4, aire=16)
+----- Couche 1
+Cercle (x=12, y=13, r=2, aire=12.566)
+Rectangle(x=13, y=16, l=1, h=5, aire=5)
+Carre (x=10, y=11, c=3, aire=9)
+----- Couche 2
+Couche cachee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+***Étape 13 : Afficher l'aire du canevas
+L'aire total du caneva est de :137.103
+***Étape 14 : Retirer la première forme de la couche
+***Étape 15 : Afficher le canevas
+----- Couche 0
+Cercle (x=5, y=5, r=5, aire=78.5375)
+Rectangle(x=4, y=4, l=4, h=4, aire=16)
+Carre (x=2, y=2, c=4, aire=16)
+----- Couche 1
+Rectangle(x=13, y=16, l=1, h=5, aire=5)
+Carre (x=10, y=11, c=3, aire=9)
+----- Couche 2
+Couche cachee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+***Étape 16 : Afficher l'aire du canevas
+L'aire total du caneva est de :124.538
+***Étape 17 : Réinitialiser le canevas
+***Étape 18 : Afficher le canevas
+----- Couche 0
+Couche vide
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+***Étape 19 : Afficher l'aire du canevas
+L'aire total du caneva est de :0
+Fin du test de validation
+
+*******************************
+
 TESTS APPLICATION (CAS 02)
+***Étape 1 : Activer la couche 1
+***Étape 2 : Ajouter trois formes géométriques
+Les forment ajouté à la couche sont les suivante :
+Cercle(x = -4, y = 0, rayon = 6)
+Rectangle(x = 1, y = 2, l = 3, h = 4)
+Carre(x = 6, y = 6, cote = 6)
+***Étape 3 : Activer la couche 2
+***Étape 4 : Ajouter une forme
+La forme ajouté à la couche est la suivante :
+Cercle(x = 0, y = 5, rayon = 1)
+***Étape 5 : Afficher le canevas
+----- Couche 0
+----- Couche 1
+Cercle (x=-4, y=0, r=6, aire=113.094)
+Rectangle(x=1, y=2, l=3, h=4, aire=12)
+Carre (x=6, y=6, c=6, aire=36)
+----- Couche 2
+Cercle (x=0, y=5, r=1, aire=3.1415)
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+***Étape 6 : Afficher l'aire du canevas
+L'aire total du caneva est de :164.236
+***Étape 7 : Activer la couche 0
+***Étape 8 : Ajouter trois formes géométrique différentes
+Les forment ajouté à la couche sont les suivante :
+Cercle(x = 7, y = -7, rayon = 3)
+Rectangle(x = 3, y = 2, l = 6, h = 1)
+Carre(x = 2, y = 6, cote = 7)
+***Étape 9 : Cacher la couche 2
+***Étape 10 : Activer la couche 1
+***Étape 11 : Translater la couche avec des valeurs non nulles
+Les valeurs utilisé sont : (x = 10, y= 10)
+***Étape 12 : Afficher le canevas
+----- Couche 0
+Cercle (x=7, y=-7, r=3, aire=28.2735)
+Rectangle(x=3, y=2, l=6, h=1, aire=6)
+Carre (x=2, y=6, c=7, aire=49)
+----- Couche 1
+Cercle (x=6, y=10, r=6, aire=113.094)
+Rectangle(x=11, y=12, l=3, h=4, aire=12)
+Carre (x=16, y=16, c=6, aire=36)
+----- Couche 2
+Couche cachee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+***Étape 13 : Afficher l'aire du canevas
+L'aire total du caneva est de :244.368
+***Étape 14 : Retirer la première forme de la couche
+***Étape 15 : Afficher le canevas
+----- Couche 0
+Cercle (x=7, y=-7, r=3, aire=28.2735)
+Rectangle(x=3, y=2, l=6, h=1, aire=6)
+Carre (x=2, y=6, c=7, aire=49)
+----- Couche 1
+Rectangle(x=11, y=12, l=3, h=4, aire=12)
+Carre (x=16, y=16, c=6, aire=36)
+----- Couche 2
+Couche cachee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+***Étape 16 : Afficher l'aire du canevas
+L'aire total du caneva est de :131.274
+***Étape 17 : Réinitialiser le canevas
+***Étape 18 : Afficher le canevas
+----- Couche 0
+Couche vide
+----- Couche 1
+Couche initialisee
+----- Couche 2
+Couche initialisee
+----- Couche 3
+Couche initialisee
+----- Couche 4
+Couche initialisee
+***Étape 19 : Afficher l'aire du canevas
+L'aire total du caneva est de :0
+Fin du test de validation

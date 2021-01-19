@@ -16,7 +16,6 @@ Vecteur::Vecteur(){
 }
 
 Vecteur::~Vecteur(){
-	delete [] tableau;
 }
 
 int Vecteur::AfficherCapacite(){

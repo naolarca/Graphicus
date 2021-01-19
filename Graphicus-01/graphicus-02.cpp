@@ -13,7 +13,8 @@ int main()
 {
    Tests tests;
    
-   tests.tests_application_cas_01();
+   tests.tests_application();
+ 
    return 0;
 }
 
