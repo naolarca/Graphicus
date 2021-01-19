@@ -86,86 +86,41 @@ Fin du test de validation
 *******************************
 
 TESTS APPLICATION (CAS 02)
-***Étape 1 : Activer la couche 1
-***Étape 2 : Ajouter trois formes géométriques
-Les forment ajouté à la couche sont les suivante :
-Cercle(x = -4, y = 0, rayon = 6)
-Rectangle(x = 1, y = 2, l = 3, h = 4)
-Carre(x = 6, y = 6, cote = 6)
-***Étape 3 : Activer la couche 2
-***Étape 4 : Ajouter une forme
-La forme ajouté à la couche est la suivante :
-Cercle(x = 0, y = 5, rayon = 1)
-***Étape 5 : Afficher le canevas
------ Couche 0
------ Couche 1
-Cercle (x=-4, y=0, r=6, aire=113.094)
-Rectangle(x=1, y=2, l=3, h=4, aire=12)
-Carre (x=6, y=6, c=6, aire=36)
------ Couche 2
-Cercle (x=0, y=5, r=1, aire=3.1415)
------ Couche 3
-Couche initialisee
------ Couche 4
-Couche initialisee
-***Étape 6 : Afficher l'aire du canevas
-L'aire total du caneva est de :164.236
-***Étape 7 : Activer la couche 0
-***Étape 8 : Ajouter trois formes géométrique différentes
-Les forment ajouté à la couche sont les suivante :
-Cercle(x = 7, y = -7, rayon = 3)
-Rectangle(x = 3, y = 2, l = 6, h = 1)
-Carre(x = 2, y = 6, cote = 7)
-***Étape 9 : Cacher la couche 2
-***Étape 10 : Activer la couche 1
-***Étape 11 : Translater la couche avec des valeurs non nulles
-Les valeurs utilisé sont : (x = 10, y= 10)
-***Étape 12 : Afficher le canevas
------ Couche 0
-Cercle (x=7, y=-7, r=3, aire=28.2735)
-Rectangle(x=3, y=2, l=6, h=1, aire=6)
-Carre (x=2, y=6, c=7, aire=49)
------ Couche 1
-Cercle (x=6, y=10, r=6, aire=113.094)
-Rectangle(x=11, y=12, l=3, h=4, aire=12)
-Carre (x=16, y=16, c=6, aire=36)
------ Couche 2
-Couche cachee
------ Couche 3
-Couche initialisee
------ Couche 4
-Couche initialisee
-***Étape 13 : Afficher l'aire du canevas
-L'aire total du caneva est de :244.368
-***Étape 14 : Retirer la première forme de la couche
-***Étape 15 : Afficher le canevas
------ Couche 0
-Cercle (x=7, y=-7, r=3, aire=28.2735)
-Rectangle(x=3, y=2, l=6, h=1, aire=6)
-Carre (x=2, y=6, c=7, aire=49)
------ Couche 1
-Rectangle(x=11, y=12, l=3, h=4, aire=12)
-Carre (x=16, y=16, c=6, aire=36)
------ Couche 2
-Couche cachee
------ Couche 3
-Couche initialisee
------ Couche 4
-Couche initialisee
-***Étape 16 : Afficher l'aire du canevas
-L'aire total du caneva est de :131.274
-***Étape 17 : Réinitialiser le canevas
-***Étape 18 : Afficher le canevas
------ Couche 0
-Couche vide
------ Couche 1
-Couche initialisee
------ Couche 2
-Couche initialisee
------ Couche 3
-Couche initialisee
------ Couche 4
-Couche initialisee
-***Étape 19 : Afficher l'aire du canevas
-L'aire total du caneva est de :0
-Fin du test de validation
+PLAN DE TEST
+
+*** TEST 1
+Nom de la fonction à tester: Retirer forme a partir du canevas
+Entrée: Un index plus grand que la taille
+erreur
+*** TEST 2
+Nom de la fonction à tester: Retirer forme a partir du canevas
+Entrée: Un index négatif
+erreur
+*** TEST 3
+Nom de la fonction à tester: Retirer forme a partir du canevas
+Entrée: Un index plus grand que la capacité
+erreur
+*** TEST 4
+Nom de la fonction à tester: Réinitialiser le canevas
+Entrée: Un canevas vide
+canevas reinitialisé
+*** TEST 5
+Nom de la fonction à tester: activer une couche a partir du canevas
+Entrée: Un index plus grand que le nombre de couches possibles
+erreur
+*** TEST 6
+Nom de la fonction à tester: activer une couche a partir du canevas
+Entrée: Un index négatif
+erreur
+*** TEST 7
+Nom de la fonction à tester: calculer l'aire d'un cercle
+Entrée: Un rayon négatif
+L'aire du cercle est:78.5375
+*** TEST 8
+Nom de la fonction à tester: calculer l'aire d'un rectangle
+Entrée: Une hauteur négative et une largeur positive
+L'aire du rectangle est :-9
+*** TEST 8
+Nom de la fonction à tester: Changer l'état d'une couche
+Entrée: Un état qui n'existe pas comme bonjour
+erreur
