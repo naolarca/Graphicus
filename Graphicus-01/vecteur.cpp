@@ -10,6 +10,8 @@
 
 Vecteur::Vecteur(){
 	
+	taille=0;
+	capacite=10;
 	tableau= new Forme* [capacite];
 }
 

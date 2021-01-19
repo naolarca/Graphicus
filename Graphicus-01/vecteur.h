@@ -28,8 +28,8 @@ public:
  	Forme* indexForme(int index);
  	void AfficherVecteur();
  private:
- 	int taille=0;
- 	int capacite=10;
+ 	int taille;
+ 	int capacite;
  	Forme **tableau;
  	
 };

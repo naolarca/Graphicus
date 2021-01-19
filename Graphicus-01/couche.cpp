@@ -36,11 +36,15 @@ bool Couche::ajoutFormeCouche(Forme* NouvelleForme){
 }
 
 Forme* Couche::retraitFormeCouche(int index){
+	//pour avoir la taille
+	int taille=ConnaitreTaille();
 	
 	Forme* resultat;
 	if (etat!="inactive"){
-		resultat=NomCouche.RetraitForme(index);
-		return resultat;
+		if (index<taille && index>=0){
+			resultat=NomCouche.RetraitForme(index);
+			return resultat;
+		}
 	}
 	
 	resultat=NULL;
@@ -49,9 +53,18 @@ Forme* Couche::retraitFormeCouche(int index){
 
 Forme* Couche::formeStockee(int index)
 {
+	//pour avoir la taille
+	int taille=ConnaitreTaille();
+	
 	Forme* valeurRetour;
-	valeurRetour=NomCouche.indexForme(index);
+	if (index>taille && index>=0){
+		valeurRetour=NomCouche.indexForme(index);
+		return valeurRetour;
+	}
+	
+	valeurRetour=NULL;
 	return valeurRetour;
+	
 }
 
 double Couche::AireCouche()
@@ -100,8 +113,6 @@ bool Couche::ReinitialisationCouche()
 
 bool Couche::ChangementEtat(string nouvelEtat)
 {
-	//pour avoir la taille
-	int taille=ConnaitreTaille();
 	
 	if (nouvelEtat=="initialise"){
 		return false;
@@ -117,8 +128,11 @@ bool Couche::ChangementEtat(string nouvelEtat)
 	}
 	
 	
-	etat="cachee";
-	return true;
+	if (nouvelEtat=="cachee"){
+		etat="cachee";
+		return true;
+	}
+	return false;
 	
 }
 

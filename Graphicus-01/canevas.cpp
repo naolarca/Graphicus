@@ -29,7 +29,7 @@ bool Canevas::activerCouche(int index)
 	if (index<MAX_COUCHES && index>=0){
 		
 		for (int i=0; i<MAX_COUCHES; i++){
-			if (couches[i].ConnaitreEtat()=="active"){
+			if (couches[i].ConnaitreEtat()==Activation){
 				couches[i].ChangementEtat(Desactivation);
 			}
 		}
@@ -43,6 +43,7 @@ bool Canevas::activerCouche(int index)
 bool Canevas::cacherCouche(int index)
 {
 	string cache="cachee";
+	
 	if (index<MAX_COUCHES && index>=0){
 		couches[index].ChangementEtat(cache);
 		return true;
@@ -64,10 +65,15 @@ bool Canevas::ajouterForme(Forme *p_forme)
 
 bool Canevas::retirerForme(int index)
 {
-	if (index<MAX_COUCHES && index>=0){
-		activerCouche(index);
-		couches[index].retraitFormeCouche(index);
-		return true;
+	for (int i=0; i<MAX_COUCHES; i++){
+		if (couches[i].ConnaitreEtat()=="active"){
+			int taille=couches[i].ConnaitreTaille();
+			
+			if (index<taille && index>=0){
+				couches[i].retraitFormeCouche(index);
+				return true;
+			}
+		}
 	}
 	
 	return false;
