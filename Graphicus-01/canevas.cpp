@@ -8,10 +8,12 @@
 
 #include "canevas.h"
 
-Canevas::Canevas(){	
+Canevas::Canevas(){
+	couches[0].ChangementEtat("active");	
 }
 
 Canevas::~Canevas(){
+	
 }
 
 bool Canevas::reinitialiser()
@@ -19,6 +21,7 @@ bool Canevas::reinitialiser()
 	for (int i=0; i<MAX_COUCHES;i++){
 		couches[i].ReinitialisationCouche();
 	}
+	couches[0].ChangementEtat("active");
    return true;
 }
 
@@ -26,8 +29,8 @@ bool Canevas::activerCouche(int index)
 {
 	string Activation="active";
 	string Desactivation="inactive";
+	
 	if (index<MAX_COUCHES && index>=0){
-		
 		for (int i=0; i<MAX_COUCHES; i++){
 			if (couches[i].ConnaitreEtat()==Activation){
 				couches[i].ChangementEtat(Desactivation);
@@ -102,10 +105,10 @@ bool Canevas::translater(int deltaX, int deltaY)
 	return false;
 }
 
-void Canevas::afficher()
+void Canevas::afficher(ostream & s)
 {
 	for (int i=0; i<MAX_COUCHES; i++){
 		cout<<"----- Couche "<<i<<endl;
-		couches[i].ContenuCanevas();
+		couches[i].ContenuCanevas(std::cout);
 	}
 }

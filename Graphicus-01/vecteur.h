@@ -26,7 +26,7 @@ public:
  	bool AjoutForme(Forme* newForme);
 	Forme* RetraitForme(int index);
  	Forme* indexForme(int index);
- 	void AfficherVecteur();
+ 	void AfficherVecteur(ostream & s);
  private:
  	int taille;
  	int capacite;

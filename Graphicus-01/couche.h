@@ -28,7 +28,7 @@ class Couche
    	bool TranslationCouche(int deltax, int deltay);
    	bool ReinitialisationCouche();
    	bool ChangementEtat(string nouvelEtat);
-   	void ContenuCanevas ();
+   	void ContenuCanevas (ostream & s);
 
    private:
    	Vecteur NomCouche;

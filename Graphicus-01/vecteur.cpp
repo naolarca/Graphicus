@@ -16,6 +16,7 @@ Vecteur::Vecteur(){
 }
 
 Vecteur::~Vecteur(){
+	delete [] tableau;
 }
 
 int Vecteur::AfficherCapacite(){
@@ -36,6 +37,7 @@ void Vecteur::Vider(){
 	{
 		taille=0;
 	}
+	delete [] tableau;
 
 }
 
@@ -87,7 +89,7 @@ Forme* Vecteur::indexForme(int index){
 	CopieTableau=NULL;
 	return CopieTableau;
 }
-void Vecteur::AfficherVecteur(){
+void Vecteur::AfficherVecteur(ostream & s){
 
 	for (int i=0; i<=taille; i++){
 		cout<<tableau[i];

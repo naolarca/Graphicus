@@ -124,7 +124,7 @@ void Tests::tests_unitaires_vecteur()
 	cout<<testVect.indexForme(0)<<endl;
  	//test afficher vecteur
  	cout<<"Afficher Vecteur:"<<endl;
- 	testVect.AfficherVecteur();
+ 	testVect.AfficherVecteur(std::cout);
  	cout<<endl;
  	cout<<"taille:"<<testVect.AfficherTaille()<<endl;
  	cout<<"capacite:"<<testVect.AfficherCapacite()<<endl;
@@ -219,7 +219,7 @@ void Tests::tests_unitaires_couche()
   	cout<<"etat:"<<testCouche.ConnaitreEtat()<<endl;
    	
    //test contenu canevas
-   	testCouche.ContenuCanevas();
+   	testCouche.ContenuCanevas(std::cout);
 
 }
 
@@ -286,7 +286,7 @@ void Tests::tests_unitaires_canevas()
    	else cout<<"translation echouee"<<endl;
    
    //test afficher
-   testCanevas.afficher();
+   testCanevas.afficher(std::cout);
 }
 
 void Tests::tests_unitaires()
@@ -351,7 +351,7 @@ void Tests::tests_application_cas_01()
    CanValid.ajouterForme(cc2);
    
    cout << "***Étape 5 : Afficher le canevas"<< endl;
-   CanValid.afficher();
+   CanValid.afficher(std::cout);
    
    cout<< "***Étape 6 : Afficher l'aire du canevas" << endl;
    cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
@@ -393,7 +393,7 @@ void Tests::tests_application_cas_01()
    CanValid.translater(10,10);
    
    cout << "***Étape 12 : Afficher le canevas" << endl;
-   CanValid.afficher();
+   CanValid.afficher(std::cout);
    
    cout << "***Étape 13 : Afficher l'aire du canevas"<<endl;
    cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
@@ -402,7 +402,7 @@ void Tests::tests_application_cas_01()
    CanValid.retirerForme(0);
    
    cout << "***Étape 15 : Afficher le canevas"<< endl; 
-   CanValid.afficher();
+   CanValid.afficher(std::cout);
    
    cout << "***Étape 16 : Afficher l'aire du canevas" <<endl;
    cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
@@ -411,7 +411,7 @@ void Tests::tests_application_cas_01()
    CanValid.reinitialiser();
    
    cout << "***Étape 18 : Afficher le canevas"<< endl; 
-   CanValid.afficher();
+   CanValid.afficher(std::cout);
    
    cout << "***Étape 19 : Afficher l'aire du canevas" <<endl;
    cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
@@ -465,7 +465,7 @@ void Tests::tests_application_cas_02()
    CanValid.ajouterForme(cc2);
    
    cout << "***Étape 5 : Afficher le canevas"<< endl;
-   CanValid.afficher();
+   CanValid.afficher(std::cout);
    
    cout<< "***Étape 6 : Afficher l'aire du canevas" << endl;
    cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
@@ -507,7 +507,7 @@ void Tests::tests_application_cas_02()
    CanValid.translater(10,10);
    
    cout << "***Étape 12 : Afficher le canevas" << endl;
-   CanValid.afficher();
+   CanValid.afficher(std::cout);
    
    cout << "***Étape 13 : Afficher l'aire du canevas"<<endl;
    cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
@@ -516,7 +516,7 @@ void Tests::tests_application_cas_02()
    CanValid.retirerForme(0);
    
    cout << "***Étape 15 : Afficher le canevas"<< endl; 
-   CanValid.afficher();
+   CanValid.afficher(std::cout);
    
    cout << "***Étape 16 : Afficher l'aire du canevas" <<endl;
    cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;
@@ -525,7 +525,7 @@ void Tests::tests_application_cas_02()
    CanValid.reinitialiser();
    
    cout << "***Étape 18 : Afficher le canevas"<< endl; 
-   CanValid.afficher();
+   CanValid.afficher(std::cout);
    
    cout << "***Étape 19 : Afficher l'aire du canevas" <<endl;
    cout << "L'aire total du caneva est de :" << CanValid.aire() << endl;

@@ -25,14 +25,12 @@ int Couche::ConnaitreTaille(){
 }
 
 bool Couche::ajoutFormeCouche(Forme* NouvelleForme){
-	if (etat!="inactive"){
+	if (etat=="active"){
 		NomCouche.AjoutForme(NouvelleForme);
 		return true;
 	}
 	
-	else {
-		return false;
-	}
+	return false;
 }
 
 Forme* Couche::retraitFormeCouche(int index){
@@ -40,7 +38,7 @@ Forme* Couche::retraitFormeCouche(int index){
 	int taille=ConnaitreTaille();
 	
 	Forme* resultat;
-	if (etat!="inactive"){
+	if (etat=="active"){
 		if (index<taille && index>=0){
 			resultat=NomCouche.RetraitForme(index);
 			return resultat;
@@ -57,7 +55,7 @@ Forme* Couche::formeStockee(int index)
 	int taille=ConnaitreTaille();
 	
 	Forme* valeurRetour;
-	if (index>taille && index>=0){
+	if (index<taille && index>=0){
 		valeurRetour=NomCouche.indexForme(index);
 		return valeurRetour;
 	}
@@ -74,9 +72,11 @@ double Couche::AireCouche()
 	//pour avoir la taille
 	int taille=ConnaitreTaille();
 	
-	for(int i=0; i<taille;i++){
-		Forme* retour= NomCouche.indexForme(i);
-		AireTotale+=retour->aire();	
+	if (etat!="cachee" && etat!="initialise"){
+		for(int i=0; i<taille;i++){
+			Forme* retour= NomCouche.indexForme(i);
+			AireTotale+=retour->aire();
+		}
 	}
 	return AireTotale;
 }
@@ -86,7 +86,7 @@ bool Couche::TranslationCouche(int deltax, int deltay)
 	//pour avoir la taille
 	int taille=ConnaitreTaille();
 	
-	if (etat!="inactive"){
+	if (etat=="active"){
 		for (int i=0; i<taille; i++){
 		
 			(NomCouche.indexForme(i))->translater(deltax, deltay);
@@ -127,7 +127,6 @@ bool Couche::ChangementEtat(string nouvelEtat)
 		return true;
 	}
 	
-	
 	if (nouvelEtat=="cachee"){
 		etat="cachee";
 		return true;
@@ -136,7 +135,7 @@ bool Couche::ChangementEtat(string nouvelEtat)
 	
 }
 
-void Couche::ContenuCanevas ()
+void Couche::ContenuCanevas (ostream & s)
 {		
 	//pour avoir la taille
 	int taille=ConnaitreTaille();
@@ -149,8 +148,15 @@ void Couche::ContenuCanevas ()
 		cout<<"Couche cachee"<<endl;
 	}
 	
-	else{
+	if (etat=="inactive"){
 		for (int j=0; j<taille; j++){
+			(NomCouche.indexForme(j))->afficher(std::cout);
+		}
+	}
+	
+	if (etat=="active"){
+		if (taille==0) cout<<"Couche vide"<<endl;
+		else for (int j=0; j<taille; j++){
 			(NomCouche.indexForme(j))->afficher(std::cout);
 		}
 	}
